@@ -1,0 +1,41 @@
+/* Add here all your CSS customizations */
+
+/* CSS Variables */
+
+html.side-header-overlay-full-screen #header {
+	display: flex;
+	align-items: center;
+	background-color: rgba(51, 51, 51, 0.99);
+	background-color: #CFF1A0 !important;
+	/* background-color: #9DCD5A !important; */
+	/* background-color: #5C8A1D !important; */
+	/* background-color: #2B690F!important; */
+	position: fixed;
+	box-shadow: 0 0 18px rgba(68, 68, 68, 0.07);
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	padding-top: 48px;
+	padding-top: 3rem;
+	opacity: 0;
+	visibility: hidden;
+	transition: ease opacity 300ms, ease visibility 300ms;
+}
+
+
+#footer .footer-copyright {
+	background: #1c2023;
+  background: #ffff;
+}
+
+#footer {
+	background: #212529;
+	border-top: 4px solid #CFF1A0;
+	border-top: 4px solid #ffff;
+	font-size: 0.9em;
+	/* margin-top: 50px; */
+	padding: 0;
+	position: relative;
+	clear: both;
+}
