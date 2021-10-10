@@ -37,6 +37,20 @@ html.side-header-overlay-full-screen #header {
 }
 
 
+html.side-header-overlay-full-screen #header .header-nav-main nav > ul > li > a {
+	display: inline-block;
+	border: 0;
+	font-size: 28.8px;
+	font-size: 1.8rem;
+	font-size: 1.4rem;
+	text-transform: none;
+	color: #FFF;
+	color: #CFF1A0;
+	padding: 15px 0 !important;
+	font-weight: 400;
+}
+
+
 
 @media (max-width: 575px) {
   .porto-big-title {
