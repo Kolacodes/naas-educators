@@ -2,6 +2,12 @@
 
 /* CSS Variables */
 
+
+.sticky-wrapper.sticky-wrapper-transparent .sticky-body {
+	background: transparent;
+	background: #5C8A1D !important;
+}
+
 html.side-header-overlay-full-screen #header {
 	display: flex;
 	align-items: center;
