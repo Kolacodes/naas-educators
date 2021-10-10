@@ -40,7 +40,7 @@ html.side-header-overlay-full-screen #header {
 
 @media (max-width: 575px) {
   .porto-big-title {
-    letter-spacing: -14px;
+    letter-spacing: -11px;
     font-size: 3.7rem !important;
   }
 }
