@@ -8,7 +8,7 @@ html.side-header-overlay-full-screen #header {
 	background-color: rgba(51, 51, 51, 0.99);
 	background-color: #CFF1A0 !important;
 	/* background-color: #9DCD5A !important; */
-	/* background-color: #5C8A1D !important; */
+	background-color: #5C8A1D !important;
 	/* background-color: #2B690F!important; */
 	position: fixed;
 	box-shadow: 0 0 18px rgba(68, 68, 68, 0.07);
@@ -31,11 +31,12 @@ html.side-header-overlay-full-screen #header {
 
 #footer {
 	background: #212529;
-	border-top: 4px solid #CFF1A0;
 	border-top: 4px solid #ffff;
+	/* border-top: 4px solid #5C8A1D; */
 	font-size: 0.9em;
 	/* margin-top: 50px; */
 	padding: 0;
 	position: relative;
 	clear: both;
 }
+
