@@ -1,23 +1,29 @@
+/* CSS Variables */
+:root{
+	--custom-skin-primary: #5C8A1D;
+}
+
+
 ::-moz-selection {
 	color: #FFF;
-	background: #0088CC;
+	background: var(--custom-skin-primary);
 }
 
 ::selection {
 	color: #FFF;
-	background: #0088CC;
+	background: var(--custom-skin-primary);
 }
 
 a {
-	color: #0088CC;
+	color: var(--custom-skin-primary);
 }
 
 a:hover {
-	color: #0099e6;
+	color: var(--custom-skin-primary);
 }
 
 a:focus {
-	color: #0099e6;
+	color: var(--custom-skin-primary);
 }
 
 a:active {
@@ -26,12 +32,12 @@ a:active {
 
 html .text-color-primary,
 html .text-primary {
-	color: #0088CC !important;
+	color: var(--custom-skin-primary) !important;
 }
 
 html .text-color-hover-primary:hover,
 html .text-hover-primary:hover {
-	color: #0088CC !important;
+	color: var(--custom-skin-primary) !important;
 }
 
 html .text-color-secondary,

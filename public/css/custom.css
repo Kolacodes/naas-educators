@@ -30,6 +30,23 @@ html.side-header-overlay-full-screen #header {
 }
 
 
+
+.porto-big-title {
+  letter-spacing: -18px;
+  font-size: 5.5rem !important;
+}
+
+
+
+@media (max-width: 575px) {
+  .porto-big-title {
+    letter-spacing: -14px;
+    font-size: 3.7rem !important;
+  }
+}
+
+
+
 #footer .footer-copyright {
 	background: #1c2023;
   background: #ffff;
