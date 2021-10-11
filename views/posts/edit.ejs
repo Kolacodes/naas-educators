@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+<link href="/css/luccy.css" rel="stylesheet">
+	<link href="/css/menu.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.14.1/ckeditor.js" integrity="sha256-bEIQpI72w9NJuIVhTLFUF2/8uxl0u5800r8ddViuv+o=" crossorigin="anonymous"></script> 
+    <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+
+<div class="container">
+    <div class="row">     
+            <div style="width:90%; margin:100px auto ">
+                <h1 class="header" style="text-align: center;">Update <%= found_post.title %></h1>
+                <form action="/posts/<%= found_post._id %>?_method=PUT" method="POST">
+                    <div class="form-group"> <input class="form-control" type="text" name="found_post[title]" value="<%= found_post.title %>"> </div>
+                    <!-- <div class="form-group"> <input class="form-control" type="text" name="found_postbody" placeholder="enter post" min="0.01" step="0.01"> </div> -->
+                    <div class="form-group"> <input class="form-control" type="text" name="found_post[author]" value="<%= found_post.author %>"> </div>
+                    <div class="form-group"> <input class="form-control" type="date" name="found_post[date]" value="<%= found_post.date %>"> </div>
+                    <div class="form-group"> <input class="form-control" type="text" name="found_post[postedBy]" value="<%= found_post.postedBy.username %>"> </div>
+                    <div class="form-group"> <input class="form-control" type="text" name="found_post[image]" value="<%= found_post.image %>"> </div>
+                    <div class="form-group"> <textarea name="found_post[body]" class="form-control" id="" cols="60" rows="20" value=""> <%= found_post.body %> </textarea></div>
+                    <div class="form-group"> <button style="background-color: rgb(222, 191, 115); border: none;" class="btn btn-lg btn-primary btn-block">Submit!</button> </div>
+                </form>   
+                <a href="/posts">Go Back</a>
+            </div>
+    </div>
+</div>
+
+<script>
+    CKEDITOR.replace( "found_post[body]", {
+        plugins: 'wysiwygarea, popup, font, image, blockquote, dialogui, button, colorbutton, toolbar, basicstyles, link'
+    } );
+  </script>
+
+ <!-- ################  END OF FORM SECTION      ##########################################  -->
+
+<% include ../partials/footer %>
