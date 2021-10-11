@@ -1,29 +1,37 @@
 {
-  "name": "appname",
-  "description": "a really cool app",
+  "name": "naasBlog",
   "version": "1.0.0",
+  "description": "naas educators",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "cross-env NODE_ENV=production node app",
+    "dev": "cross-env NODE_ENV=development nodemon app"
   },
-  "engines": {
-    "node": "10.15.3"
+  "author": "Afrocodez",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.2.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.0",
+    "flash": "^1.1.0",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.5.4",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.0",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1",
+    "save": "^2.4.0",
+    "cross-env": "^7.0.2"
   },
   "devDependencies": {
-    "browser-sync": "^2.9.11",
-    "gulp-sourcemaps": "^1.6.0"
-  },
-  "dependencies": {
-    "bcrypt": "^3.0.8",
-    "body-parser": "^1.19.0",
-    "connect-flash": "^0.1.1",
-    "cookie-parser": "^1.4.4",
-    "ejs": "^2.6.1",
-    "express": "^4.17.1",
-    "express-flash-messages": "^0.1.1",
-    "express-session": "^1.17.0",
-    "method-override": "^3.0.0",
-    "nodemailer": "^6.4.2"
+    "nodemon": "^2.0.6"
   }
 }
