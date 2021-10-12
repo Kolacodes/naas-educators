@@ -24,7 +24,7 @@ html.side-header-overlay-full-screen #header {
 	align-items: center;
 	background-color: rgba(51, 51, 51, 0.99);
 	background-color: #CFF1A0 !important;
-	/* background-color: #9DCD5A !important; */
+	background-color: #9DCD5A !important;
 	background-color: #5C8A1D !important;
 	/* background-color: #2B690F!important; */
 	position: fixed;
@@ -62,6 +62,82 @@ html.side-header-overlay-full-screen #header .header-nav-main nav > ul > li > a 
 }
 
 
+ /* ################  COMMENT SECTION STYLES    ##########################################  */
+  
+
+ .commentSection{
+  padding: 5% 10% 5% 10%;
+  margin: 5% 10% 1% 10% ;
+  background-color: var(--secondary-background);
+}
+
+
+.pullRight{
+  position: absolute;
+  left: 50%;
+} 
+
+
+.commentCounterBtn{
+  background: white;
+  background: rgb(222, 191, 115);
+	background: #9DCD5A !important;
+  padding: 3px;
+  border: solid white;
+  color: white;
+  font-weight: 600;
+}
+
+.commentCounterText{
+  color: white;
+}
+
+.addNewCommentBtn{
+  background: white;
+  padding: 2px;
+  color: rgb(222, 191, 115);
+	color: #9DCD5A;
+  border: solid white;
+  font-weight: 600;
+}
+
+.addNewCommentText{
+  color: rgb(222, 191, 115);
+	color: #9DCD5A;
+}
+
+#delete-book {
+  display: inline;
+}
+
+
+.fa-user{
+  color: var(--primary-text);
+}
+
+
+.read-more  {
+  background-color: var(--secondary-color);
+  border: solid var(--secondary-color);
+  background-color: var(--primary-color);
+  border: solid var(--primary-color);
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 12px;
+	letter-spacing: 1.2px;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+
+.read-more a{
+  color: white;
+}
+.read-more:hover {
+	background-color: rgb(222, 191, 115);
+	color: #fff;
+}
 
 @media (max-width: 575px) {
   .porto-big-title {

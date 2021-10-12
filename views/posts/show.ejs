@@ -18,7 +18,7 @@
 																		</div>
 																		<div class="table">
 																				<!-- <h6 class="category text-success"><i class="fa fa-university"></i>Creed</h6> -->
-																				<h6 class="category text-success">Creed</h6>
+																				<!-- <h6 class="category text-success">Creed</h6> -->
 																				<h4 class="card-caption">
 																		<a href="#"><%-found_post.title%></a>
 														</h4>
@@ -42,81 +42,72 @@
 
 
 
- <!-- Blogs Display Section -->
- <article class="col-md-12">
-	<div class="cards-1 section- background">
-			<div class="container">
-					<div class="row">
-							<div class="col">
-									<div class="card card-blog">
-											<div class="card-image">
-													<!-- <a href="#"> <img class="img" src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"> </a> -->
-													<div class="ripple-cont"></div>
-											</div>
-											<div class="table">
-													<!-- <h6 class="category text-success"><i class="fa fa-university"></i>Creed</h6> -->
-													<!-- <h6 class="category text-success">Creed</h6> -->
-													<h4 class="card-caption">
-											<!-- <a href="#"><%-found_post.title%></a> -->
-							</h4>
-													<p class="card-description">
-														<!-- <%-found_post.body%> -->
-														
-<div class="container p4" id="disqus_thread">
-
-</div>
-
-													</p>
 
 
-													<div class="post-meta">
-														<!-- <span><i class="far fa-user"></i> By <a href="#"><%-found_post.author%></a> </span> -->
-														<!-- <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span> -->
-													</div>
-													
-											</div>
+
+
+        <!-- Comment Showcase Section -->
+		
+          <div class="container py4">
+						
+               
+						<div id="comments" class="post-block mt-5 post-comments">
+							<p>
+								<button class="commentCounterBtn">
+									<a class="commentCounterText" href="#">
+										<%= found_post.comments.length %>
+									COMMENT<% if (found_post.comments.length > 1){%>S
+												<% } else {}; %>
+									</a>
+							</button>
+								<button class="addNewCommentBtn pullRight">
+										<a class="addNewCommentText" href="/posts/<%=found_post._id%>/comments/new">
+											Add New Comment
+										</a>
+								</button>
+						</p>
+							<!-- <h4 style="color: mediumseagreen;" class="mb-3">Comments (3)</h4> -->
+							<ul class="comments">
+								<li>
+									<div class="comment">
+										<div class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block">
+											<img class="avatar" alt="" src="img/avatars/avatar.jpg">
+										</div>
+										<div class="comment-block">
+											<div class="comment-arrow"></div>
+    <% found_post.comments.forEach(function(comment){ %>
+
+											<span style="color: rgb(188, 105, 11);" class="comment-by">
+				<span><i class="far fa-user"></i> <a href="#"></a></span>
+
+												<strong>
+													<%= comment.author.username %>
+												</strong>
+
+											</span>
+											<p>
+
+			<p style="font-size: small;">
+				<span></span>
+
+
+				<%= comment.body %></p>
+			<br>
+
+			<% }); %>
+											</p>
+											<!-- <span class="date float-right">January 12, 2020 at 1:38 pm</span> -->
+										</div>
 									</div>
-							</div>
-					</div>
-			</div>
-	</div>								
-</article>
+								</li>
+							</ul>
+
+						</div>
+     </div>
 
 
-
-
-
-
-
-
-
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://naaseducators.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
-
-
-
-
-
-
-
+<br>
+<br>
 
 
 <% include ../partials/footer %>
