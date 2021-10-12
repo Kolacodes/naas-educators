@@ -235,7 +235,9 @@
 																				<!-- <h6 class="category text-success"><i class="fa fa-university"></i>Creed</h6> -->
 																				<h6 class="category text-success">Creed</h6>
 																				<h4 class="card-caption">
-																		<a href="#"><%- each_post.title%></a>
+																		<a href="/posts/<%= each_post._id %>">
+																			<%- each_post.title%>
+																		</a>
 														</h4>
 																				<!-- <p class="card-description"><%- each_post.body.substring(0, 50) %></p> -->
 																				<div class="ftr">

@@ -8,7 +8,6 @@ html {
 
 body {
 	background-color: #FFF;
-	background-color: #CFF1A0 !important;
 	color: #777;
 	font-family: "Open Sans", Arial, sans-serif;
 	font-size: 14px;
@@ -22,7 +21,8 @@ body a {
 
 .body {
 	background-color: #FFF;
-	background-color: #CFF1A0 !important;
+	background-color: #f6fef6 !important;
+
 
 }
 
