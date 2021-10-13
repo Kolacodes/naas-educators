@@ -16,6 +16,8 @@ root{
 	background: #d2f8d2 !important;
 	background: #e5fbe5 !important;
 	background: #f6fef6 !important;
+	background: #fff !important;
+
 
 }
 
@@ -68,7 +70,7 @@ html.side-header-overlay-full-screen #header .header-nav-main nav > ul > li > a 
  .commentSection{
   padding: 5% 10% 5% 10%;
   margin: 5% 10% 1% 10% ;
-  background-color: var(--secondary-background);
+  background-color: #f6fef6;
 }
 
 
@@ -81,7 +83,7 @@ html.side-header-overlay-full-screen #header .header-nav-main nav > ul > li > a 
 .commentCounterBtn{
   background: white;
   background: rgb(222, 191, 115);
-	background: #9DCD5A !important;
+	background: #5C8A1D;
   padding: 3px;
   border: solid white;
   color: white;
@@ -96,14 +98,13 @@ html.side-header-overlay-full-screen #header .header-nav-main nav > ul > li > a 
   background: white;
   padding: 2px;
   color: rgb(222, 191, 115);
-	color: #9DCD5A;
   border: solid white;
   font-weight: 600;
 }
 
 .addNewCommentText{
   color: rgb(222, 191, 115);
-	color: #9DCD5A;
+	color: #5C8A1D;
 }
 
 #delete-book {
@@ -136,8 +137,10 @@ html.side-header-overlay-full-screen #header .header-nav-main nav > ul > li > a 
 }
 .read-more:hover {
 	background-color: rgb(222, 191, 115);
+	background-color: #5C8A1D;
 	color: #fff;
 }
+
 
 @media (max-width: 575px) {
   .porto-big-title {

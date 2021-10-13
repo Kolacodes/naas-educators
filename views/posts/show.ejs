@@ -13,7 +13,7 @@
 														<div class="col">
 																<div class="card card-blog">
 																		<div class="card-image">
-																				<a href="#"> <img class="img" src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"> </a>
+																				<a href="#"> <img class="img" src="<%-found_post.image%>"> </a>
 																				<div class="ripple-cont"></div>
 																		</div>
 																		<div class="table">
@@ -29,7 +29,11 @@
 
 																				<div class="post-meta">
 																					<span><i class="far fa-user"></i> By <a href="#"><%-found_post.author%></a> </span>
-																					<span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
+																					<span><i class="far fa-comments"></i> <a href="#">
+																						<%= found_post.comments.length %>
+																						comment<% if (found_post.comments.length > 1){%>s
+																									<% } else {}; %>
+																					</a></span>
 																				</div>
 																				
 																		</div>
@@ -42,72 +46,118 @@
 
 
 
+											
+<!-- ################  COMMENT SECTION      ########################################## -->
 
 
+					
+<section class="commentSection">
+	<p>
+			<button class="commentCounterBtn">
+				<a class="commentCounterText" href="#">
+					<%= found_post.comments.length %>
+				COMMENT<% if (found_post.comments.length > 1){%>S
+							<% } else {}; %>
+				</a>
+		</button>
+			<button class="addNewCommentBtn pullRight">
+					<a class="addNewCommentText" href="/posts/<%=found_post._id%>/comments/new">
+						Add New Comment
+					</a>
+			</button>
+	</p>
 
+	<br>
+	<br>
 
-        <!-- Comment Showcase Section -->
-		
-          <div class="container py4">
-						
-               
-						<div id="comments" class="post-block mt-5 post-comments">
-							<p>
-								<button class="commentCounterBtn">
-									<a class="commentCounterText" href="#">
-										<%= found_post.comments.length %>
-									COMMENT<% if (found_post.comments.length > 1){%>S
-												<% } else {}; %>
-									</a>
-							</button>
-								<button class="addNewCommentBtn pullRight">
-										<a class="addNewCommentText" href="/posts/<%=found_post._id%>/comments/new">
-											Add New Comment
-										</a>
-								</button>
-						</p>
-							<!-- <h4 style="color: mediumseagreen;" class="mb-3">Comments (3)</h4> -->
-							<ul class="comments">
-								<li>
-									<div class="comment">
-										<div class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block">
-											<img class="avatar" alt="" src="img/avatars/avatar.jpg">
-										</div>
-										<div class="comment-block">
-											<div class="comment-arrow"></div>
-    <% found_post.comments.forEach(function(comment){ %>
-
-											<span style="color: rgb(188, 105, 11);" class="comment-by">
-				<span><i class="far fa-user"></i> <a href="#"></a></span>
-
-												<strong>
-													<%= comment.author.username %>
-												</strong>
-
-											</span>
-											<p>
-
-			<p style="font-size: small;">
-				<span></span>
-
-
-				<%= comment.body %></p>
+<% found_post.comments.forEach(function(comment){ %>
+			
+	<div class="row">
+		<div class="col-md-12"></div>
+				<p>
+					<i class="fas fa-user" aria-hidden="true"></i>    
+					<strong style="color: rgb(222, 191, 115)">
+						<%= comment.author.username %>
+					</strong>
+				</p>
+				
+			<p style="font-size: small;"><%= comment.body %></p>
 			<br>
 
-			<% }); %>
-											</p>
-											<!-- <span class="date float-right">January 12, 2020 at 1:38 pm</span> -->
-										</div>
-									</div>
-								</li>
-							</ul>
+	<% if(currentUser && String(comment.author.id) === String(currentUser._id)){ %>
+			<a class="btn btn-xs btn-warning"
+				href="/posts/<%=found_post._id%>/comments/<%=comment._id%>/edit">
+				Edit
+			</a>
+			<form id="delete-book" action="/posts/<%=found_post._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+				<input type="submit" class="btn btn-xs btn-danger" value="Delete"> </input>
+			</form>
+	<% }%>
+	</div>
+<% }); %>
+<br>
 
-						</div>
-     </div>
+
+
+
+<!-- <div class="col text-center">
+	<button class="btn btn-default read-more">
+		<a href="/shortstories">
+			You like short stories?
+		</a>
+	</button>
+</div> -->
+
+
+<div class="col text-center">
+	<button class="btn btn-default read-more">
+		<a href="http://www.myquranjourney.net">
+			Join us in this journey!
+		</a>
+	</button>
+</div>
+</section>
+<br>
+
+
+<!-- ################  End of comment section      ########################################## -->
 
 
 <br>
 <br>
+<br>
 
+
+<div class="container">
+<div class="row">
+	<!-- <h6 class="blogTitle" style="text-align: center">SUbscribe to our newsletter</h6> -->
+	<div style="width: 60%; margin: 25px auto;">
+	<form action = "/subscribe" method = "post">
+		<div>
+			<h4 style="text-align: center;">Want more of this?
+			<br>
+			<br>
+			We would deliver lots more into your inbox
+		</h4>
+		<br>
+			
+		</div>
+		<!-- <br> -->
+			<div class="form-group inner-addon left-addon">
+			<input class="form-control" type="text" name="firstName" placeholder="First Name" required >
+			</div>
+			<div class="form-group inner-addon left-addon">
+				<input class="form-control" type="text" name="lastName" placeholder="Last Name" required >
+				</div>
+			<div class="form-group inner-addon left-addon">
+			<input class="form-control" type="email" name="email" placeholder="Email" required >
+			</div>
+			<div class="form-group">
+			<input style="background-color: rgb(222, 191, 115); border: none;" class="btn btn-lg btn-primary btn-block" type="submit" value = "Subscribe">
+			</div>
+	</form>
+</div>
+</div>
+</div>
 
 <% include ../partials/footer %>
